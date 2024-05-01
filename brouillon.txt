@@ -1,0 +1,51 @@
+redis-server
+
+source /opt/nautobot/bin/activate
+
+nautobot-server runserver 0.0.0.0:8080 --insecure
+
+http://0.0.0.0:8080/plugins/bd_schema_plugin/
+
+nautobot-server migrate
+
+nautobot-server migrate bd_schema_plugin
+
+nautobot-server makemigrations bd_schema_plugin
+
+sudo gedit /opt/nautobot/nautobot_config.py
+
+superuser: onana, password: nanojunior92
+
+
+valeur par défaut d'un label "[]"
+
+https://django-postgres-extensions.readthedocs.io/en/latest/arrays.html
+
+{"noms": "Onana", "prénoms": ["damase", "Donald"]}
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    {% for page_number in page_obj.adjusted_elided_pages %}
+        {% if page_number == page_obj.paginator.ELLIPSIS %}
+            {{page_number}}
+        {% else %}
+            <a
+            href="/plugins/bd_schema_plugin/{{page_number}}"
+            class="{% if page_number == page_obj.number %}current{% endif %}"
+        >
+            {{page_number}}
+        </a>
+        {% endif %}
+    {% endfor %} -->
+
+<!-- {{form.as_p}} -->

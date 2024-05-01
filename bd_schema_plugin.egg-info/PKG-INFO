@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: bd-schema-plugin
+Version: 0.1
+Summary: An example NetBox plugin
+Home-page: https://github.com/jeremystretch/my-example-plugin
+Author: Jeremy Stretch
+License: Apache 2.0
+Platform: UNKNOWN
+
+UNKNOWN
+

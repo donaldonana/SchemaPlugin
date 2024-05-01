@@ -1,0 +1,67 @@
+
+{% extends '_partials/base.html' %}
+
+{% block header %}
+
+<!-- <style>
+    /* Additional styling to center the card */
+    .centered-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Optional: Adjust the height as needed */
+    }
+  </style> -->
+<title>Détails Noeuds</title>
+
+{% endblock %}
+
+
+{% load static %}
+
+{% block content %}
+<div class=" row row-cols-1 row-cols-md-2 row-cols-lg-3 service-items" id="items" 
+style="text-align: center;
+        margin-top: 50px;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-bottom: 30px;">
+
+<h2 class="ui header">Relation Details</h2>
+
+<div class="ui container centered-card"  
+style="text-align: center;
+        
+        display: flex;
+      justify-content: center;
+      align-items: center;">
+
+<div class="ui card" style="margin-top: 50px; margin-bottom: 60px;">
+    <div class="content">
+      <div class="header">Id: {{r.id}}</div>
+      <div class="description">
+        <p> <strong> Type </strong> : {{r.relation_type}}</p>
+        <p> <strong> Source Node </strong> : {{r.from_node}}</p>   
+        <p> <strong> Target Node </strong> : {{r.to_node}}</p>   
+        <p> <strong> properties </strong> : </p>
+        {% for key, value  in r.properties.items %}
+               <strong> {{key}} </strong>  :  {{value}} <br>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="extra content"> 
+
+       <p> --- Not Things yet --- </p> 
+
+      <a  href="/plugins/bd_schema_plugin/relation/edit/{{r.id}}" class="ui button primary"><i class="pencil icon"></i></a>  
+      <a href="/plugins/bd_schema_plugin/relation/delete/{{r.id}}" class="ui button red"><i class="trash icon"></i></a>
+    </div>
+
+</div>
+</div>
+
+</div>
+{% include '_partials/footer.html' %} 
+
+  
+{% endblock content %}
